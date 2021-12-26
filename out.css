@@ -22,6 +22,7 @@ h3{
 }
 
  .DivAboutUsButton{
+  cursor: pointer;
   margin-right: 150px;
   width: 150px;
   height: 80px;
@@ -33,6 +34,7 @@ h3{
 }
 
 .DivHomeButton{
+  cursor: pointer;
   margin-left: 150px;
   width: 150px;
   height: 80px;
