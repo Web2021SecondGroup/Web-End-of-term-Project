@@ -28,6 +28,12 @@
     4: {"title" : "傍晚回家的路上看到非常美的夕陽，你會...", "type": "EI", "A": "拍照並分享", "B": "站在那欣賞一會兒", "C": "看一眼，沒有太多感覺"},
     5: {"title" : "朋友在妳心情低落時想陪你出去散散心，你會...", "type": "EI", "A": "打起精神和朋友出門", "B": "拒絕朋友自己調整", "C": "把朋友留在家陪你"}
     }
+    var ans_1 = ['AABAB', 'AACAB', 'AACAC', 'AADAB', 'ABBAB', 'ABCAB', 'ABCAC', 'ABCBB', 'ABDAB', 'ACCAB', 'ACCBB', 'ACCCB', 'BACAB', 'BACAC', 'BBBAB', 'BBCAB', 'BBDAB', 'BCAAB', 'BCBAB', 'BCBCB', 'BCCAB', 'BCCAC', 'BCCBB', 'BCCCB', 'BCDAB', 'BCDCB', 'CACAB', 'CBBAB', 'CBCAB', 'CBCAC', 'CBCBB', 'CCAAB', 'CCBAB', 'CCCAA', 'CCCAB', 'CCCAC', 'CCCBB', 'CCCCB', 'CCDAB', 'DABAB', 'DACAA', 'DACAB', 'DACAC', 'DACCB', 'DADAA', 'DADAB', 'DBAAB', 'DBBAB', 'DBCAB', 'DBCBB', 'DBDAB', 'DCAAB', 'DCAAC', 'DCACB', 'DCBAA', 'DCBAB', 'DCBAC', 'DCBBB', 'DCBCB', 'DCCAA', 'DCCAB', 'DCCAC', 'DCCBA', 'DCCBB', 'DCCBC', 'DCCCA', 'DCCCB', 'DCCCC', 'DCDAA', 'DCDAB', 'DCDAC', 'DCDBA', 'DCDBB', 'DCDCB']
+    var ans_2 = ['AAAAB', 'AAABB', 'AAABC', 'AAACB', 'AABBB', 'AACBB', 'AADBB', 'ABABB', 'ABACB', 'ABDBB', 'ACBBB', 'BAAAB', 'BAAAC', 'BAABA', 'BAABB', 'BAABC', 'BAACB', 'BAACC', 'BABAB', 'BABBB', 'BABCB', 'BACBA', 'BACBB', 'BACBC', 'BADAB', 'BADBA', 'BADBB', 'BADCB', 'BBAAB', 'BBABB', 'BBABC', 'BBACB', 'BBBBB', 'BBDBB', 'BCABA', 'BCABB', 'BCABC', 'BCACB', 'BCBBB', 'BCDBB', 'CAAAB', 'CAABB', 'CAACB', 'CBAAB', 'CBABB', 'CBACB', 'CBDBB', 'CBDBB', 'CCABB', 'CCACB', 'CCDBB', 'DAAAB', 'DAABA', 'DAABB', 'DAABC', 'DAACA', 'DAACB', 'DABBB', 'DABCB', 'DACBB', 'DADBA', 'DADBB', 'DBABA', 'DBABB', 'DCABB']
+    var ans_3 = ['AAAAA', 'AAAAC', 'AAABA', 'AAACA', 'AABAA', 'AACAA', 'AADAA', 'AADBA', 'AADCA', 'ABAAA', 'ABAAB', 'ABAAC', 'ABABA', 'ABACA', 'ABBAA', 'ABCAA', 'ABDAA', 'ABDBA', 'ACAAA', 'ACAAB', 'ACAAC', 'ACABA', 'ACABB', 'ACABC', 'ACACA', 'ACACB', 'ACACC', 'ACBAA', 'ACBAB', 'ACBAC', 'ACBBA', 'ACBCA', 'ACBCB', 'ACCAA', 'ACCAC', 'ACCBA', 'ACCCA', 'ACDAA', 'ACDAB', 'ACDAC', 'ACDBA', 'ACDBB', 'ACDCA', 'ACDCB', 'BAAAA', 'BABAA', 'BBAAA', 'BBAAC', 'BCAAA', 'BCAAC', 'BCBAA', 'BCCAA', 'BCDAA', 'CAAAA', 'CACAA', 'CADAA', 'CBAAA', 'CBAAC', 'CBABA', 'CBBAA', 'CBDAA', 'CCAAA', 'CCAAC', 'CCABA', 'CCACA', 'CCBAA', 'CCDAA', 'DAAAA', 'DAAAC', 'DABAA', 'DBAAA', 'DBBAA', 'DCAAA', 'DCABA', 'DCACA'];
+    var ans_4 = ['AABAC', 'AABBA', 'AABBC', 'AABCB', 'AABCC', 'AACBC', 'AADBC', 'ABABC', 'ABBAC', 'ABBBA', 'ABBBB', 'ABBBC', 'ABCBC', 'ACBBC', 'ACCBC', 'ACDBC', 'BABAC', 'BABBA', 'BABBC', 'BABCC', 'BADBC', 'BBBAC', 'BBBBC', 'BCBAC', 'BCBBA', 'BCBBC', 'BCCBC', 'BCDBC', 'CAAAC', 'CAABA', 'CAABC', 'CAACC', 'CABAA', 'CABAB', 'CABAC', 'CABBA', 'CABBB', 'CABBC', 'CABCA', 'CABCB', 'CABCC', 'CACAC', 'CACBA', 'CACBB', 'CACBC', 'CACCC', 'CADAB', 'CADAC', 'CADBA', 'CADBB', 'CADBC', 'CADCB', 'CBABC', 'CBBAC', 'CBBBA', 'CBBBB', 'CBBBC', 'CBBCB', 'CBBCC', 'CBCBC', 'CBDBA', 'CCABC', 'CCBAC', 'CCBBA', 'CCBBB', 'CCBBC', 'CCBCB', 'CCBCC', 'CCCBC', 'CCDBA', 'CCDBC', 'DABAC', 'DABBA', 'DABBC', 'DACBC', 'DADBC', 'DBBBA', 'DBBBB', 'DBBBC', 'DCABC', 'DCBBA', 'DCBBC']
+    var ans_5 = ['AAACC', 'AACCC', 'AADAC', 'AADCB', 'AADCC', 'ABACC', 'ABBCC', 'ABDAC', 'ABDBC', 'ABDCA', 'ABDCB', 'ABDCC', 'ACBCC', 'ACCCC', 'ACDCC', 'BADAC', 'BADCC', 'BBBCC', 'BBDAC', 'BBDBC', 'BBDCC', 'BCACC', 'BCDAC', 'BCDCC', 'CADCC', 'CBACC', 'CBCCC', 'CBDBC', 'CBDBC', 'CBDCA', 'CBDCB', 'CBDCC', 'CCACC', 'CCCCC', 'CCDAC', 'CCDCB', 'CCDCC', 'DAACC', 'DABCC', 'DACCC', 'DADAC', 'DADCA', 'DADCB', 'DADCC', 'DBAAC', 'DBABC', 'DBACA', 'DBACB', 'DBACC', 'DBBAC', 'DBBCA', 'DBBCB', 'DBBCC', 'DBCAC', 'DBCBC', 'DBCCC', 'DBDAA', 'DBDAC', 'DBDBA', 'DBDBB', 'DBDBC', 'DBDCA', 'DBDCB', 'DBDCC', 'DCACC', 'DCBCC', 'DCDBC', 'DCDCA', 'DCDCC']
+    var ans_6 = ['AABCA', 'AACBA', 'AACCA', 'AACCB', 'ABBCA', 'ABBCB', 'ABCBA', 'ABCCA', 'ABCCB', 'ABCCC', 'BAACA', 'BABCA', 'BACAA', 'BACCA', 'BACCB', 'BACCC', 'BADAA', 'BADCA', 'BBABA', 'BBACA', 'BBACC', 'BBBAA', 'BBBBA', 'BBBCA', 'BBBCB', 'BBCAA', 'BBCAC', 'BBCBA', 'BBCBB', 'BBCBC', 'BBCCA', 'BBCCB', 'BBCCC', 'BBDAA', 'BBDBA', 'BBDCA', 'BBDCB', 'BCACA', 'BCBCA', 'BCBCC', 'BCCBA', 'BCCCA', 'BCCCC', 'BCDBA', 'BCDCA', 'CAACA', 'CACCA', 'CACCB', 'CADCA', 'CBACA', 'CBBCA', 'CBCAA', 'CBCBA', 'CBCCA', 'CBCCB', 'CCBCA', 'CCCBA', 'CCCCA', 'CCDCA', 'DABCA', 'DACBA', 'DACCA', 'DBCAA', 'DBCBA', 'DBCCA', 'DBCCB', 'DCBCA']
 
     $(".question-container").hide();
     function start() {
@@ -79,8 +85,23 @@
       }
       else{
         var soup = ['AAAAA', 'AAAAB', 'AAAAC'];
-        if(soup.includes(answer)){
-          console.log("嘿嘿");
+        if(ans_1.includes(answer)){
+          document.location.href="out1.html";
+        }
+        else if(ans_2.includes(answer)){
+          document.location.href="out2.html";
+        }
+        else if(ans_3.includes(answer)){
+          document.location.href="out3.html";
+        }
+        else if(ans_4.includes(answer)){
+          document.location.href="out4.html";
+        }
+        else if(ans_5.includes(answer)){
+          document.location.href="out5.html";
+        }
+        else if(ans_6.includes(answer)){
+          document.location.href="out6.html";
         }
       }
 
