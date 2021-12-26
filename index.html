@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>2021Web基本原理與技術第二組專題</title>
+   /*Google font*/
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&amp;display=swap" rel="stylesheet">
+   /*jquery*/
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script>
+     // // 獲取視窗寬度
+    // if (window.innerWidth)
+    // winWidth = window.innerWidth;
+    // else if ((document.body) && (document.body.clientWidth))
+    // winWidth = document.body.clientWidth;
+    // // 獲取視窗高度
+    // if (window.innerHeight)
+    // winHeight = window.innerHeight;
+    // else if ((document.body) && (document.body.clientHeight))
+    // winHeight = document.body.clientHeight;
+    // console.log(winHeight);
+
+    // $(".ColorBlocks").css("height",winHeight);
+
+    var question_word = {
+    1: {"title" : "你喜歡用什麼方法來打發時間", "type": "EI", "A": "睡覺", "B": "做運動或散步", "C": "看書做手工", "D": "看劇刷視頻"},
+    2: {"title" : "你看中了一款手錶，會選擇買下面哪種顏色？", "type": "EI", "A": "金色", "B": "銀色", "C": "玫瑰金"},
+    3: {"title" : "去看望生病的朋友，你會帶什麼禮物？", "type": "EI", "A": "花束", "B": "水果", "C": "打發時間的玩意兒", "D": "其他"},
+    4: {"title" : "傍晚回家的路上看到非常美的夕陽，你會...", "type": "EI", "A": "拍照並分享", "B": "站在那欣賞一會兒", "C": "看一眼，沒有太多感覺"},
+    5: {"title" : "朋友在妳心情低落時想陪你出去散散心，你會...", "type": "EI", "A": "打起精神和朋友出門", "B": "拒絕朋友自己調整", "C": "把朋友留在家陪你"}
+    }
+
+    $(".question-container").hide();
+    function start() {
+      $(".start-container").hide();
+      // $("html").css("background-image", "none");
+      // $("html").css("background-color", "#FFDAB9");
+      $(".question-container").show();
+      next();
+    }
+    var question_num = 1;
+    var last_num = 5;
+    var answer = "";
+    function next() {
+      console.log(question_num);
+      if($("#OptionARadio").is(":checked")){
+        answer = answer+"A";
+      }
+      if($("#OptionBRadio").is(":checked")){
+        answer += "B";
+      }
+      if($("#OptionCRadio").is(":checked")){
+        answer += "C";
+      }
+      if($("#OptionDRadio").is(":checked")){
+        answer += "D";
+      }
+      console.log(answer);
+      /*第一題後要移除已選取*/
+      if(question_num>1){
+        $('input[type="radio"]').removeAttr('checked');
+        // $('input[type="radio"]').checked = false; 
+      }
+      if(question_num<6){
+        $(".question").html(question_word[question_num]["title"]);
+        $("#optionA").html(question_word[question_num]["A"]);
+        $("#optionB").html(question_word[question_num]["B"]);
+        $("#optionC").html(question_word[question_num]["C"]);
+        if(question_word[question_num]["D"]!=undefined){
+          $("#optionD").html(question_word[question_num]["D"]);
+        }
+        else{
+          $("#optionD").hide();
+        }
+      }
+      else{
+        var soup = ['AAAAA', 'AAAAB', 'AAAAC'];
+        if(soup.includes(answer)){
+          console.log("嘿嘿");
+        }
+      }
+
+      question_num++;
+      if(question_num == last_num){
+        $(".NextButton").html("產生結果");
+        $(".NextButton").css("font-size","20px");
+      }
+    }
+   </script>
+   <style>
+    html{
+      margin: 0;
+      padding: 0;
+    /*   border: solid 5px blue; */
+    /*   width: 100%; */
+      height: 100%; 
+    /*   box-sizing: border-box; */
+    }
+    *{
+    /*   box-sizing: border-box; */
+    /*   border: solid 1px black; */
+    /*   border: 0; */
+      margin: 0;
+      padding: 0;
+    /*   position: relative; */
+    /*   box-sizing: inherit; */
+    /*   background-color: #F297A6; */
+    }
+    body{
+    /*   border: solid 5px blue; */
+      margin: 0;
+      padding: 0;
+    /*   width: 100%;
+      height: 100%; */
+      overflow: hidden;
+      background-color: #D9D9D9;
+    /*   background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%); */
+    }
+    .start-container{
+    /*   border: solid 5px blue; */
+      width: 100%;
+      height: 100%;
+    /*   display: block; */
+
+    }
+    /* .test_name{
+      margin-top: 20%;
+      text-align: center;
+      font-family: "jf-openhuninn";
+      font-weight: "400";
+    } */
+    .DivButton{
+      text-align: center;
+    }
+    .StartButton{
+      margin-top: 20%;
+      cursor: pointer;
+      width: 30%;
+      height: 80px;
+      font-size: 50px;
+      background-color: #F19F4D;
+      border-radius: 10px;
+      border:none;
+      color: white;
+      font-family: 'Sigmar One', cursive;
+    /*   filter: blur(2px); */
+    }
+    .StartButton:hover{
+      transform: scale(1.5);
+    }
+    .question-container{
+      display: none;
+    }
+    .question{
+      margin-top: 10%;
+      text-align: center;
+      color: #4484CE;
+    }
+    .option{
+      margin-top: 10%;
+      text-align: center;
+      padding: 0px;
+    }
+    .DivOptionButton{
+      padding: 15px;
+    }
+    /* .OptionButton{
+      cursor: pointer;
+      /*讓按鈕平行對齊
+      vertical-align: middle;
+      padding: 0px;
+      width: 50%;
+      height: 80px;
+      font-size: 30px;
+      background-color: #f4bd93;
+      border-radius: 10px;
+      border: none;
+      color: #4484CE;
+      font-size: 30px;
+      font-weight: 400; 
+    }*/
+    .DivNextButton{
+      margin-top: 8%;
+      text-align: center;
+    }
+    .NextButton{
+      cursor: pointer;
+      width: 15%;
+      height: 50px;
+      font-size: 30px;
+      background-color: #F19F4D;
+      border-radius: 10px;
+      border:none;
+      color: white;
+      font-family: 'Sigmar One', Microsoft JhengHei, cursive;
+    }
+    .option{
+      margin-top: 5%;
+    }
+    .TitleImage{
+      display: block;
+      margin: auto;
+      margin-top: 13%;
+    }
+    .background{
+    /*   border: solid 5px blue; */
+      width: 100%;
+      height: 100%;
+    /*   display: block; */
+    /*   top: 0;
+      left: 0; */
+    }
+    .ColorBlocks{
+      /*移至底層*/
+      z-index: -1;
+    /*   border: solid 5px blue; */
+      position: absolute;
+    /*   display: block; */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .ColorBlock{
+    /*   display: block; */
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      /*有點像ps的混和模式*/
+      mix-blend-mode: hard-light;
+    }
+    @keyframes moveX-1 {
+      from { left: 90%; transform: rotate(20deg); } to { left: 50%; transform: rotate(600deg); }
+    }
+    @keyframes moveY-1 {
+      from { top: 90%; } to { top: -10%; }
+    }
+    @keyframes moveX-2 {
+      from { left: 0%; } to { left: 90%; }
+    }
+    @keyframes moveY-2 {
+      from { top: 20%; } to { top: -10%; }
+    }
+    @keyframes moveX-3 {
+      from { left: 80%; } to { left: 90%; }
+    }
+    @keyframes moveY-3 {
+      from { top: 0%; } to { top: 20%; }
+    }
+    @keyframes moveX-4 {
+      from { left: 0%; } to { left: 60%; }
+    }
+    @keyframes moveY-4 {
+      from { top: 0%; } to { top: 90%; }
+    }
+    @keyframes moveX-5 {
+      from { left: 100%;transform: rotate(-40deg); } to { left: 30%;transform: rotate(-20deg); }
+    }
+    @keyframes moveY-5 {
+      from { top: 50%; } to { top: 30%; }
+    }@keyframes moveX-6 {
+      from { left: 0%;transform: rotate(-30deg); } to { left: 20%;transform: rotate(-100deg); }
+    }
+    @keyframes moveY-6 {
+      from { top: 0%; } to { top: 100%; }
+    }
+    @keyframes moveX-7 {
+      from { left: 0%; } to { left: 70%; }
+    }
+    @keyframes moveY-7 {
+      from { top: 0%; } to { top: 20%; }
+    }
+    @keyframes moveX-8 {
+      from { left: 70%; } to { left: 20%; }
+    }
+    @keyframes moveY-8 {
+      from { top: 80%; } to { top: -20%; }
+    }
+    @keyframes moveX-9 {
+      from { left: 0%; } to { left: 70%; }
+    }
+    @keyframes moveY-9 {
+      from { top: 80%; } to { top: 0%; }
+    }
+    @keyframes moveX-10 {
+      from { left: 30%; } to { left: 0%; }
+    }
+    @keyframes moveY-10 {
+      from { top: 0%;transform: rotate(200deg); } to { top: 100%;transform: rotate(250deg); }
+    }
+    @keyframes moveX-11 {
+      from { left: 0%; } to { left: 100%; }
+    }
+    @keyframes moveY-11 {
+      from { top: 80%;transform: rotate(200deg); } to { top: 0%;transform: rotate(250deg); }
+    }
+    .move-1 {
+      width: 100px;
+      height: auto;
+      transform: rotate(50deg);
+      animation: moveX-1 14s linear 0s infinite alternate, 
+                  moveY-1 15s linear 0s infinite alternate-reverse;
+    }
+    .move-2{
+      width: 500px;
+      height: auto;
+      transform: rotate(50deg);
+      animation: moveX-2 34s linear 0s infinite alternate, 
+                  moveY-2 15s linear 0s infinite alternate-reverse;
+    }
+    .move-3{
+      width: 300px;
+      height: auto;
+      transform: rotate(20deg);
+      animation: moveX-3 30s linear 0s infinite alternate, 
+                  moveY-3 13s linear 0s infinite alternate-reverse;
+    }
+    .move-4{
+      width: 100px;
+      height: auto;
+      transform: rotate(-30deg);
+      animation: moveX-4 34s linear 0s infinite alternate, 
+                  moveY-4 15s linear 0s infinite alternate-reverse;
+    }
+    .move-5{
+      width: 80px;
+      height: auto;
+      transform: rotate(-40deg);
+      animation: moveX-5 20s linear 0s infinite alternate, 
+                  moveY-5 10s linear 0s infinite alternate-reverse;
+    }
+    .move-6{
+      width: 100px;
+      height: auto;
+      transform: rotate(-30deg);
+      animation: moveX-6 34s linear 0s infinite alternate, 
+                  moveY-6 15s linear 0s infinite alternate-reverse;
+    }
+    .move-7{
+      width: 300px;
+      height: auto;
+      transform: rotate(110deg);
+      animation: moveX-7 34s linear 0s infinite alternate, 
+                  moveY-7 15s linear 0s infinite alternate-reverse;
+    }
+    .move-8{
+      width: 600px;
+      height: auto;
+      transform: rotate(-50deg);
+      animation: moveX-8 34s linear 0s infinite alternate, 
+                  moveY-8 15s linear 0s infinite alternate-reverse;
+    }
+    .move-9{
+      width: 300px;
+      height: auto;
+      transform: rotate(110deg);
+      animation: moveX-9 34s linear 0s infinite alternate, 
+                  moveY-9 15s linear 0s infinite alternate-reverse;
+    }
+    .move-10{
+      width: 500px;
+      height: auto;
+      transform: rotate(200deg);
+      animation: moveX-10 34s linear 0s infinite alternate, 
+                  moveY-10 15s linear 0s infinite alternate-reverse;
+    }
+    .move-11{
+      width: 70px;
+      height: auto;
+      transform: rotate(200deg);
+      animation: moveX-11 34s linear 0s infinite alternate, 
+                  moveY-11 15s linear 0s infinite alternate-reverse;
+    }
+
+    /*單選按鈕*/
+    #radio input[type="radio"] {
+      display: none; 
+      text-align: center;
+    }
+    #radio input:checked + .OptionButton {
+    /*   background-color: #F19F4D; */
+      border: solid 5px white;
+      color: #fff;
+      font-weight: 200;
+      cursor: default; 
+    }
+    #radio .OptionButton {
+    /*   display: inline-block; margin: 0 5px 10px 0; padding: 5px 10px; background: #f7f7f7; color: #333; cursor: pointer;  */
+    /*   margin: 0 5px 10px 0;  */
+      display: inline-block;
+    /*   padding: 13px;
+      padding-left: 50px;
+      padding-right: 50px; */
+    /*   padding: 5px 10px; */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      cursor: pointer;
+    /*   align: center; */
+    /*   text-align: center; */
+      /*讓按鈕平行對齊*/
+      vertical-align: middle;
+      width: 50%;
+    /*   height: 80px; */
+      font-size: 30px;
+      background-color: #f4bd93;
+      border-radius: 10px;
+      border: none;
+      color: #4484CE;
+      font-size: 30px;
+      font-weight: 500;
+      border-radius: 5px; 
+    }
+    #radio .OptionButton:hover {
+      letter-spacing: 2px;
+    /*   border: solid 5px white;
+      transition: border 0.35s linear; */
+    }
+    .links{
+    /*   display: inline-block; */
+    /*   vertical-align: middle; */
+    }
+    .link{
+      color: #6b629b;
+      font-family: 'Playfair Display', serif;
+    /*   padding: 20px; */
+    }
+    .AboutUsLink{
+      text-align: left;
+    }
+    .ReferenceLink{
+      text-align: right;
+    }
+   </style>
+ </head>
+ <body>
+  <div class="start-container">
+    <div class="background">
+      <div class="ColorBlocks">
+        <img class="ColorBlock move-1" src="https://i.imgur.com/0um7lVU.png">
+        <img class="ColorBlock move-2" src="https://i.imgur.com/aofkcWa.png">
+        <img class="ColorBlock move-3" src="https://i.imgur.com/e3do8tH.png">
+        <img class="ColorBlock move-4" src="https://i.imgur.com/0um7lVU.png">
+        <img class="ColorBlock move-5" src="https://i.imgur.com/5884zn3.png">
+        <img class="ColorBlock move-6" src="https://i.imgur.com/5884zn3.png">
+        <img class="ColorBlock move-7" src="https://i.imgur.com/e3do8tH.png">
+        <img class="ColorBlock move-8" src="https://i.imgur.com/aofkcWa.png">
+        <img class="ColorBlock move-9" src="https://i.imgur.com/5Ct0dmq.png">
+        <img class="ColorBlock move-10" src="https://i.imgur.com/aofkcWa.png">
+        <img class="ColorBlock move-11" src="https://i.imgur.com/5884zn3.png">
+      </div>
+    </div>
+    <div class="links">
+      <div class="link AboutUsLink">
+        <a href="/about/" class="about-link-trigger">ABOUT US</a>
+      </div>
+      <div class="link ReferenceLink">
+        <a href="/about/" class="about-link-trigger">REFERENCE</a>
+      </div>
+    </div>
+  <!--   <h1 class="test_name">心理測驗題目</h1> -->
+    <img class="TitleImage" src="https://i.imgur.com/wN3GKGG.png" width="850" height="auto">
+    <div class="DivButton">
+      <button class="StartButton" onclick="start();">start !</button>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <h1 class="question"></h1>
+    <div class="option">
+      <div id="radio">
+        <div class="DivOptionButton">
+          <label><input type="radio" id="OptionARadio" name="label">
+            <span class="OptionButton" id="optionA"></span>
+            </label>
+        </div>
+        <div class="DivOptionButton">
+          <label><input type="radio" id="OptionBRadio" name="label">
+            <span class="OptionButton" id="optionB"></span></label>
+        </div>
+        <div class="DivOptionButton">
+          <label><input type="radio" id="OptionCRadio" name="label"><span class="OptionButton" id="optionC"></span></label>
+        </div>
+        <div class="DivOptionButton">
+          <label><input type="radio" id="OptionDRadio" name="label"><span class="OptionButton" id="optionD"></span></label>
+        </div>
+      </div>
+  <!--     <div class="DivOptionButton">
+        <button class="OptionButton" id="optionA"></button></br>
+      </div>
+      <div class="DivOptionButton">
+        <button class="OptionButton" id="optionB"></button></br>
+      </div>
+      <div class="DivOptionButton">
+        <button class="OptionButton" id="optionC"></button></br>
+      </div>
+      <div class="DivOptionButton">
+        <button class="OptionButton" id="optionD"></button>
+      </div> -->
+    </div>
+      <div class="DivNextButton">
+        <button class="NextButton" onclick="next();">next</button>
+      </div>
+    </div>
+  </body>
+</html>
