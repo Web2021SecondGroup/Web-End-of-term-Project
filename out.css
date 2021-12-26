@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+
+h3{
+  font-family: ‘cwTeXKai’, serif;
+  font-weight: 300;
+}
+
+.Background{
+  background-image: url("back.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  background-size: cover; 
+}
+
+.picture{
+  height: 110%;
+ }
+
+ .DivOutButton{
+  text-align: center;
+}
+
+ .DivAboutUsButton{
+  margin-right: 150px;
+  width: 150px;
+  height: 80px;
+  font-size: 30px;
+  background-color: #F19F4D;
+  border-radius: 10px;
+  border:none;
+  color: #000000;
+}
+
+.DivHomeButton{
+  margin-left: 150px;
+  width: 150px;
+  height: 80px;
+  font-size: 30px;
+  background-color: #F19F4D;
+  border-radius: 10px;
+  border:none;
+  color: #000000;
+}
+
+.inner{
+	display: inline-block;
+}
