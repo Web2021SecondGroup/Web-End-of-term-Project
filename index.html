@@ -6,7 +6,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&amp;display=swap" rel="stylesheet">
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    <script>
-     // // 獲取視窗寬度
+    // // 獲取視窗寬度
     // if (window.innerWidth)
     // winWidth = window.innerWidth;
     // else if ((document.body) && (document.body.clientWidth))
@@ -40,6 +40,11 @@
     var last_num = 5;
     var answer = "";
     function next() {
+      /*更新進度條*/
+      $(".w3-container").html(question_num*20+"%");
+      $(".w3-container").css("width",question_num*20+"%");
+
+      /*算answer*/
       console.log(question_num);
       if($("#OptionARadio").is(":checked")){
         answer = answer+"A";
@@ -426,24 +431,38 @@
    /*   position: absolute; */
      text-align: right;
    }
+   .ProgressBar{
+     margin-top: 2%;
+     margin-left: 25%;
+     margin-right: 25%;
+   }
+   .w3-round-xlarge{
+     background-color: #eadad0;
+   }
+   .w3-container{
+     background-color: #fa9074;
+     color: white;
+     width: 20%;
+   }
+
    </style>
  </head>
  <body>
   <div class="start-container">
-    <div class="background">
-      <div class="ColorBlocks">
-        <img class="ColorBlock move-1" src="https://i.imgur.com/0um7lVU.png">
-        <img class="ColorBlock move-2" src="https://i.imgur.com/aofkcWa.png">
-        <img class="ColorBlock move-3" src="https://i.imgur.com/e3do8tH.png">
-        <img class="ColorBlock move-4" src="https://i.imgur.com/0um7lVU.png">
-        <img class="ColorBlock move-5" src="https://i.imgur.com/5884zn3.png">
-        <img class="ColorBlock move-6" src="https://i.imgur.com/5884zn3.png">
-        <img class="ColorBlock move-7" src="https://i.imgur.com/e3do8tH.png">
-        <img class="ColorBlock move-8" src="https://i.imgur.com/aofkcWa.png">
-        <img class="ColorBlock move-9" src="https://i.imgur.com/5Ct0dmq.png">
-        <img class="ColorBlock move-10" src="https://i.imgur.com/aofkcWa.png">
-        <img class="ColorBlock move-11" src="https://i.imgur.com/5884zn3.png">
-      </div>
+   <div class="background">
+     <div class="ColorBlocks">
+       <img class="ColorBlock move-1" src="https://i.imgur.com/0um7lVU.png">
+       <img class="ColorBlock move-2" src="https://i.imgur.com/aofkcWa.png">
+       <img class="ColorBlock move-3" src="https://i.imgur.com/e3do8tH.png">
+       <img class="ColorBlock move-4" src="https://i.imgur.com/0um7lVU.png">
+       <img class="ColorBlock move-5" src="https://i.imgur.com/5884zn3.png">
+       <img class="ColorBlock move-6" src="https://i.imgur.com/5884zn3.png">
+       <img class="ColorBlock move-7" src="https://i.imgur.com/e3do8tH.png">
+       <img class="ColorBlock move-8" src="https://i.imgur.com/aofkcWa.png">
+       <img class="ColorBlock move-9" src="https://i.imgur.com/5Ct0dmq.png">
+       <img class="ColorBlock move-10" src="https://i.imgur.com/aofkcWa.png">
+       <img class="ColorBlock move-11" src="https://i.imgur.com/5884zn3.png">
+     </div>
     </div>
     <div class="links">
       <div class="link AboutUsLink">
@@ -461,6 +480,11 @@
   </div>
 
   <div class="question-container">
+    <div class="ProgressBar">
+      <div class="w3-round-xlarge">
+        <div class="w3-container w3-round-xlarge">20%</div>
+    </div>
+    </div>
     <h1 class="question"></h1>
     <div class="option">
       <div id="radio">
@@ -493,9 +517,9 @@
         <button class="OptionButton" id="optionD"></button>
       </div> -->
     </div>
-      <div class="DivNextButton">
-        <button class="NextButton" onclick="next();">next</button>
-      </div>
+    <div class="DivNextButton">
+      <button class="NextButton" onclick="next();">next</button>
     </div>
+   </div>
   </body>
 </html>
