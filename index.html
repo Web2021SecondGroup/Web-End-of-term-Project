@@ -37,6 +37,7 @@
 
     $(".question-container").hide();
     function start() {
+      $('html').css('overflow','auto');
       $(".start-container").hide();
       // $("html").css("background-image", "none");
       // $("html").css("background-color", "#FFDAB9");
@@ -84,7 +85,6 @@
         }
       }
       else{
-        var soup = ['AAAAA', 'AAAAB', 'AAAAC'];
         if(ans_1.includes(answer)){
           document.location.href="out1.html";
         }
@@ -103,6 +103,9 @@
         else if(ans_6.includes(answer)){
           document.location.href="out6.html";
         }
+        else{
+          document.location.href="index.html";
+        }
       }
 
       question_num++;
@@ -115,10 +118,11 @@
    <style>
     html{
       margin: 0;
-      padding: 0;
+     padding: 0;
     /*   border: solid 5px blue; */
-    /*   width: 100%; */
+      width: 100%;
       height: 100%; 
+      overflow: hidden;
     /*   box-sizing: border-box; */
     }
     *{
@@ -126,7 +130,7 @@
     /*   border: solid 1px black; */
     /*   border: 0; */
       margin: 0;
-      padding: 0;
+     padding: 0;
     /*   position: relative; */
     /*   box-sizing: inherit; */
     /*   background-color: #F297A6; */
@@ -134,7 +138,7 @@
     body{
     /*   border: solid 5px blue; */
       margin: 0;
-      padding: 0;
+     padding: 0;
     /*   width: 100%;
       height: 100%; */
       overflow: hidden;
@@ -159,6 +163,7 @@
     }
     .StartButton{
       margin-top: 20%;
+      margin-bottom: 10%;
       cursor: pointer;
       width: 30%;
       height: 80px;
@@ -206,6 +211,7 @@
     }*/
     .DivNextButton{
       margin-top: 8%;
+      margin-bottom: 5%;
       text-align: center;
     }
     .NextButton{
@@ -225,7 +231,7 @@
     .TitleImage{
       display: block;
       margin: auto;
-      margin-top: 13%;
+      margin-top: 10%;
     }
     .background{
     /*   border: solid 5px blue; */
@@ -440,51 +446,98 @@
     /*   border: solid 5px white;
       transition: border 0.35s linear; */
     }
+    .links{
+    /*   display: inline-block; */
+    /*   vertical-align: middle; */
+    }
     .link{
-     color: #6b629b;
-     font-family: 'Playfair Display', serif;
-     padding: 20px;
-   }
-   .AboutUsLink{
-     position: absolute;
-     text-align: left;
-   }
-   .ReferenceLink{
-   /*   position: absolute; */
-     text-align: right;
-   }
-   .ProgressBar{
-     margin-top: 2%;
-     margin-left: 25%;
-     margin-right: 25%;
-   }
-   .w3-round-xlarge{
-     background-color: #eadad0;
-   }
-   .w3-container{
-     background-color: #fa9074;
-     color: white;
-     width: 20%;
-   }
+      color: #6b629b;
+      font-family: 'Playfair Display', serif;
+      padding: 20px;
+    }
+    .AboutUsLink{
+      position: absolute;
+      text-align: left;
+    }
+    .ReferenceLink{
+    /*   position: absolute; */
+      text-align: right;
+    }
+    .ProgressBar{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 25%;
+    }
+    .w3-round-xlarge{
+      background-color: #eadad0;
+    }
+    .w3-container{
+      background-color: #fa9074;
+      color: white;
+      width: 20%;
+    }
+    .Preface{
+    /*   text-align: center; */
+      margin-top: 1%;
+    /*   margin-left: 25%; */
+    /*   margin-right: auto; */
+      font-size: 16px;
+      color: #3F3F3F;
+    }
+    .SpanPreface{
+    /*   text-align: center; */
+    }
+    .scroller {
+      height: 1.2em;
+      line-height: 1.2em;
+      position: relative;
+      overflow: hidden;
+    }
+    .scroller > span {
+      display:block;
+      position: absolute;
+      left:30%;
+      top: 0;
+      animation: slide 5s infinite;
+      font-weight: bold;
+
+    }
+    .scroller > span:hover{
+      animation-play-state: paused;
+    }
+    @keyframes slide {
+      0% {
+        top: 0;
+      }
+      50% {
+        top: -1.2em;
+      }
+      99% {
+        top: -2.4em;
+      }
+      100%{
+        top: 0;
+      }
+    }
 
    </style>
  </head>
  <body>
   <div class="start-container">
-   <div class="background">
-     <div class="ColorBlocks">
-       <img class="ColorBlock move-1" src="https://i.imgur.com/0um7lVU.png">
-       <img class="ColorBlock move-2" src="https://i.imgur.com/aofkcWa.png">
-       <img class="ColorBlock move-3" src="https://i.imgur.com/e3do8tH.png">
-       <img class="ColorBlock move-4" src="https://i.imgur.com/0um7lVU.png">
-       <img class="ColorBlock move-5" src="https://i.imgur.com/5884zn3.png">
-       <img class="ColorBlock move-6" src="https://i.imgur.com/5884zn3.png">
-       <img class="ColorBlock move-7" src="https://i.imgur.com/e3do8tH.png">
-       <img class="ColorBlock move-8" src="https://i.imgur.com/aofkcWa.png">
-       <img class="ColorBlock move-9" src="https://i.imgur.com/5Ct0dmq.png">
-       <img class="ColorBlock move-10" src="https://i.imgur.com/aofkcWa.png">
-       <img class="ColorBlock move-11" src="https://i.imgur.com/5884zn3.png">
-     </div>
+    <div class="background">
+      <div class="ColorBlocks">
+        <img class="ColorBlock move-1" src="https://i.imgur.com/0um7lVU.png">
+        <img class="ColorBlock move-2" src="https://i.imgur.com/aofkcWa.png">
+        <img class="ColorBlock move-3" src="https://i.imgur.com/e3do8tH.png">
+        <img class="ColorBlock move-4" src="https://i.imgur.com/0um7lVU.png">
+        <img class="ColorBlock move-5" src="https://i.imgur.com/5884zn3.png">
+        <img class="ColorBlock move-6" src="https://i.imgur.com/5884zn3.png">
+        <img class="ColorBlock move-7" src="https://i.imgur.com/e3do8tH.png">
+        <img class="ColorBlock move-8" src="https://i.imgur.com/aofkcWa.png">
+        <img class="ColorBlock move-9" src="https://i.imgur.com/5Ct0dmq.png">
+        <img class="ColorBlock move-10" src="https://i.imgur.com/aofkcWa.png">
+        <img class="ColorBlock move-11" src="https://i.imgur.com/5884zn3.png">
+      </div>
     </div>
     <div class="links">
       <div class="link AboutUsLink">
@@ -496,6 +549,11 @@
     </div>
   <!--   <h1 class="test_name">心理測驗題目</h1> -->
     <img class="TitleImage" src="https://i.imgur.com/wN3GKGG.png" width="850" height="auto">
+    <div class="Preface">
+      <div class="scroller">
+        <span class="SpanPreface">「如果人生是一桌宴席，酸、甜、苦、辣、鹹就是生命裡的各種滋味」</br>不同的菜品，擁有不同的風味。唯有細細品嚐，才能了解其中蘊含的滋味。</br>若將菜品比擬做戀人，你又會屬於哪種滋味呢？</span>
+      </div>
+    </div>
     <div class="DivButton">
       <button class="StartButton" onclick="start();">start !</button>
     </div>
@@ -542,6 +600,6 @@
     <div class="DivNextButton">
       <button class="NextButton" onclick="next();">next</button>
     </div>
-   </div>
+  </div>
   </body>
 </html>
