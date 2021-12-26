@@ -49,8 +49,8 @@
     var answer = "";
     function next() {
       /*更新進度條*/
-      $(".w3-container").html(question_num*20+"%");
-      $(".w3-container").css("width",question_num*20+"%");
+      $(".w3-container").html((question_num-1)*20+"%");
+      $(".w3-container").css("width",(question_num-1)*20+"%");
 
       /*算answer*/
       console.log(question_num);
