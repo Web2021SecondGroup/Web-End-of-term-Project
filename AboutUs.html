@@ -44,9 +44,9 @@
 				<div class="col-md-12 col-md-offset-0">
 					<ul class="timeline animate-box">
 						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(food/酒釀糰子.png);" onmouseover="boxOver();" onmouseout="boxOut();"></div>
-							<div class="timeline-panel" >
-								<div class="timeline-heading">
+							<div class="timeline-badge" style="background-image:url(food/酒釀糰子.png);" onmouseover="boxOverA();" onmouseout="boxOutA();"></div>
+							<div class="timeline-panel" id="tips_A" style="visibility: hidden">
+								<div class="timeline-heading" >
 									<h3 class="timeline-title">酒釀糰子</h3>
 									<span class="date">陳思璇</span>
 								</div>
@@ -57,8 +57,8 @@
 							
 						</li>
 						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge" style="background-image:url(food/壽喜燒.png);"></div>
-							<div class="timeline-panel">
+							<div class="timeline-badge" style="background-image:url(food/壽喜燒.png);" onmouseover="boxOverB();" onmouseout="boxOutB();"></div>
+							<div class="timeline-panel" id="tips_B" style="visibility: hidden">
 								<div class="timeline-heading">
 									<h3 class="timeline-title">壽喜燒</h3>
 									<span class="date">游舒茗</span>
@@ -69,8 +69,8 @@
 							</div>
 						</li>
 						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(food/紅燒肉.png);"></div>
-							<div class="timeline-panel">
+							<div class="timeline-badge" style="background-image:url(food/紅燒肉.png);" onmouseover="boxOverC();" onmouseout="boxOutC();"></div>
+							<div class="timeline-panel" id="tips_C" style="visibility: hidden">
 								<div class="timeline-heading">
 									<h3 class="timeline-title">紅燒肉</h3>
 									<span class="date">黃玟瑄</span>
@@ -81,8 +81,8 @@
 							</div>
 						</li>
 						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge" style="background-image:url(food/清蒸帝王蟹.png);"></div>
-							<div class="timeline-panel">
+							<div class="timeline-badge" style="background-image:url(food/清蒸帝王蟹.png);" onmouseover="boxOverD();" onmouseout="boxOutD();"></div>
+							<div class="timeline-panel" id="tips_D" style="visibility: hidden">
 								<div class="timeline-heading">
 									<h3 class="timeline-title">清蒸帝王蟹</h3>
 									<span class="date">吳詠涵</span>
@@ -111,19 +111,34 @@
 
 
 	<script>
-    	function boxOver(){
-		document.getElementById("tips").style.display="inline-block";
+    function boxOverA(){
+		document.getElementById("tips_A").style.visibility="visible";
 	}
-	function boxOut(){
-		document.getElementById("tips").style.display="none";
+	function boxOverB(){
+		document.getElementById("tips_B").style.visibility="visible";
+	}
+	function boxOverC(){
+		document.getElementById("tips_C").style.visibility="visible";
+	}
+	function boxOverD(){
+		document.getElementById("tips_D").style.visibility="visible";
+	}
+	function boxOutA(){
+		document.getElementById("tips_A").style.visibility="hidden";
+	}
+	function boxOutB(){
+		document.getElementById("tips_B").style.visibility="hidden";
+	}
+	function boxOutC(){
+		document.getElementById("tips_C").style.visibility="hidden";
+	}
+	function boxOutD(){
+		document.getElementById("tips_D").style.visibility="hidden";
 	}
 	</script>
 
 	</body>
 </html>
-
-
-
 
 
 
