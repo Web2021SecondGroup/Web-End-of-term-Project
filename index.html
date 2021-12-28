@@ -117,409 +117,409 @@
     }
    </script>
    <style>
-    html{
-      margin: 0;
-     padding: 0;
-    /*   border: solid 5px blue; */
-      width: 100%;
-      height: 100%; 
-      overflow: hidden;
-    /*   box-sizing: border-box; */
-    }
-    *{
-    /*   box-sizing: border-box; */
-    /*   border: solid 1px black; */
-    /*   border: 0; */
-      margin: 0;
-     padding: 0;
-    /*   position: relative; */
-    /*   box-sizing: inherit; */
-    /*   background-color: #F297A6; */
-    }
-    body{
-    /*   border: solid 5px blue; */
-      margin: 0;
-     padding: 0;
-    /*   width: 100%;
-      height: 100%; */
-      overflow: hidden;
-      background-color: #D9D9D9;
-    /*   background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%); */
-    }
-    .start-container{
-    /*   border: solid 5px blue; */
-      width: 100%;
-      height: 100%;
-    /*   display: block; */
+html{
+  margin: 0;
+ padding: 0;
+/*   border: solid 5px blue; */
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+/*   box-sizing: border-box; */
+}
+*{
+/*   box-sizing: border-box; */
+/*   border: solid 1px black; */
+/*   border: 0; */
+  margin: 0;
+ padding: 0;
+/*   position: relative; */
+/*   box-sizing: inherit; */
+/*   background-color: #F297A6; */
+}
+body{
+/*   border: solid 5px blue; */
+  margin: 0;
+ padding: 0;
+/*   width: 100%;
+  height: 100%; */
+  overflow: hidden;
+  background-color: #D9D9D9;
+/*   background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%); */
+}
+.start-container{
+/*   border: solid 5px blue; */
+  width: 100%;
+  height: 100%;
+/*   display: block; */
 
-    }
-    /* .test_name{
-      margin-top: 20%;
-      text-align: center;
-      font-family: "jf-openhuninn";
-      font-weight: "400";
-    } */
-    .DivButton{
-      text-align: center;
-    }
-    .StartButton{
-      margin-top: 20%;
-      margin-bottom: 10%;
-      cursor: pointer;
-      width: 30%;
-      height: 80px;
-      font-size: 50px;
-      background-color: #F19F4D;
-      border-radius: 10px;
-      border:none;
-      color: white;
-      font-family: 'Sigmar One', cursive;
-    /*   filter: blur(2px); */
-    }
-    .StartButton:hover{
-      transform: scale(1.5);
-    }
-    .question-container{
-      display: none;
-    }
-    .question{
-      margin-top: 10%;
-      text-align: center;
-      color: #4484CE;
-    }
-    .option{
-      margin-top: 10%;
-      text-align: center;
-      padding: 0px;
-    }
-    .DivOptionButton{
-      padding: 15px;
-    }
-    /* .OptionButton{
-      cursor: pointer;
-      /*讓按鈕平行對齊
-      vertical-align: middle;
-      padding: 0px;
-      width: 50%;
-      height: 80px;
-      font-size: 30px;
-      background-color: #f4bd93;
-      border-radius: 10px;
-      border: none;
-      color: #4484CE;
-      font-size: 30px;
-      font-weight: 400; 
-    }*/
-    .DivNextButton{
-      margin-top: 8%;
-      margin-bottom: 5%;
-      text-align: center;
-    }
-    .NextButton{
-      cursor: pointer;
-      width: 15%;
-      height: 50px;
-      font-size: 30px;
-      background-color: #F19F4D;
-      border-radius: 10px;
-      border:none;
-      color: white;
-      font-family: 'Sigmar One', Microsoft JhengHei, cursive;
-    }
-    .option{
-      margin-top: 5%;
-    }
-    .TitleImage{
-      display: block;
-      margin: auto;
-      margin-top: 10%;
-    }
-    .background{
-    /*   border: solid 5px blue; */
-      width: 100%;
-      height: 100%;
-    /*   display: block; */
-    /*   top: 0;
-      left: 0; */
-    }
-    .ColorBlocks{
-      /*移至底層*/
-      z-index: -1;
-    /*   border: solid 5px blue; */
-      position: absolute;
-    /*   display: block; */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .ColorBlock{
-    /*   display: block; */
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      /*有點像ps的混和模式*/
-      mix-blend-mode: hard-light;
-    }
-    @keyframes moveX-1 {
-      from { left: 90%; transform: rotate(20deg); } to { left: 50%; transform: rotate(600deg); }
-    }
-    @keyframes moveY-1 {
-      from { top: 90%; } to { top: -10%; }
-    }
-    @keyframes moveX-2 {
-      from { left: 0%; } to { left: 90%; }
-    }
-    @keyframes moveY-2 {
-      from { top: 20%; } to { top: -10%; }
-    }
-    @keyframes moveX-3 {
-      from { left: 80%; } to { left: 90%; }
-    }
-    @keyframes moveY-3 {
-      from { top: 0%; } to { top: 20%; }
-    }
-    @keyframes moveX-4 {
-      from { left: 0%; } to { left: 60%; }
-    }
-    @keyframes moveY-4 {
-      from { top: 0%; } to { top: 90%; }
-    }
-    @keyframes moveX-5 {
-      from { left: 100%;transform: rotate(-40deg); } to { left: 30%;transform: rotate(-20deg); }
-    }
-    @keyframes moveY-5 {
-      from { top: 50%; } to { top: 30%; }
-    }@keyframes moveX-6 {
-      from { left: 0%;transform: rotate(-30deg); } to { left: 20%;transform: rotate(-100deg); }
-    }
-    @keyframes moveY-6 {
-      from { top: 0%; } to { top: 100%; }
-    }
-    @keyframes moveX-7 {
-      from { left: 0%; } to { left: 70%; }
-    }
-    @keyframes moveY-7 {
-      from { top: 0%; } to { top: 20%; }
-    }
-    @keyframes moveX-8 {
-      from { left: 70%; } to { left: 20%; }
-    }
-    @keyframes moveY-8 {
-      from { top: 80%; } to { top: -20%; }
-    }
-    @keyframes moveX-9 {
-      from { left: 0%; } to { left: 70%; }
-    }
-    @keyframes moveY-9 {
-      from { top: 80%; } to { top: 0%; }
-    }
-    @keyframes moveX-10 {
-      from { left: 30%; } to { left: 0%; }
-    }
-    @keyframes moveY-10 {
-      from { top: 0%;transform: rotate(200deg); } to { top: 100%;transform: rotate(250deg); }
-    }
-    @keyframes moveX-11 {
-      from { left: 0%; } to { left: 100%; }
-    }
-    @keyframes moveY-11 {
-      from { top: 80%;transform: rotate(200deg); } to { top: 0%;transform: rotate(250deg); }
-    }
-    .move-1 {
-      width: 100px;
-      height: auto;
-      transform: rotate(50deg);
-      animation: moveX-1 14s linear 0s infinite alternate, 
-                  moveY-1 15s linear 0s infinite alternate-reverse;
-    }
-    .move-2{
-      width: 500px;
-      height: auto;
-      transform: rotate(50deg);
-      animation: moveX-2 34s linear 0s infinite alternate, 
-                  moveY-2 15s linear 0s infinite alternate-reverse;
-    }
-    .move-3{
-      width: 300px;
-      height: auto;
-      transform: rotate(20deg);
-      animation: moveX-3 30s linear 0s infinite alternate, 
-                  moveY-3 13s linear 0s infinite alternate-reverse;
-    }
-    .move-4{
-      width: 100px;
-      height: auto;
-      transform: rotate(-30deg);
-      animation: moveX-4 34s linear 0s infinite alternate, 
-                  moveY-4 15s linear 0s infinite alternate-reverse;
-    }
-    .move-5{
-      width: 80px;
-      height: auto;
-      transform: rotate(-40deg);
-      animation: moveX-5 20s linear 0s infinite alternate, 
-                  moveY-5 10s linear 0s infinite alternate-reverse;
-    }
-    .move-6{
-      width: 100px;
-      height: auto;
-      transform: rotate(-30deg);
-      animation: moveX-6 34s linear 0s infinite alternate, 
-                  moveY-6 15s linear 0s infinite alternate-reverse;
-    }
-    .move-7{
-      width: 300px;
-      height: auto;
-      transform: rotate(110deg);
-      animation: moveX-7 34s linear 0s infinite alternate, 
-                  moveY-7 15s linear 0s infinite alternate-reverse;
-    }
-    .move-8{
-      width: 600px;
-      height: auto;
-      transform: rotate(-50deg);
-      animation: moveX-8 34s linear 0s infinite alternate, 
-                  moveY-8 15s linear 0s infinite alternate-reverse;
-    }
-    .move-9{
-      width: 300px;
-      height: auto;
-      transform: rotate(110deg);
-      animation: moveX-9 34s linear 0s infinite alternate, 
-                  moveY-9 15s linear 0s infinite alternate-reverse;
-    }
-    .move-10{
-      width: 500px;
-      height: auto;
-      transform: rotate(200deg);
-      animation: moveX-10 34s linear 0s infinite alternate, 
-                  moveY-10 15s linear 0s infinite alternate-reverse;
-    }
-    .move-11{
-      width: 70px;
-      height: auto;
-      transform: rotate(200deg);
-      animation: moveX-11 34s linear 0s infinite alternate, 
-                  moveY-11 15s linear 0s infinite alternate-reverse;
-    }
+}
+/* .test_name{
+  margin-top: 20%;
+  text-align: center;
+  font-family: "jf-openhuninn";
+  font-weight: "400";
+} */
+.DivButton{
+  text-align: center;
+}
+.StartButton{
+  margin-top: 15%;
+  margin-bottom: 10%;
+  cursor: pointer;
+  width: 30%;
+  height: 80px;
+  font-size: 50px;
+  background-color: #F19F4D;
+  border-radius: 10px;
+  border:none;
+  color: white;
+  font-family: 'Sigmar One', cursive;
+/*   filter: blur(2px); */
+}
+.StartButton:hover{
+  transform: scale(1.5);
+}
+.question-container{
+  display: none;
+}
+.question{
+  margin-top: 10%;
+  text-align: center;
+  color: #4484CE;
+}
+.option{
+  margin-top: 10%;
+  text-align: center;
+  padding: 0px;
+}
+.DivOptionButton{
+  padding: 15px;
+}
+/* .OptionButton{
+  cursor: pointer;
+  /*讓按鈕平行對齊
+  vertical-align: middle;
+  padding: 0px;
+  width: 50%;
+  height: 80px;
+  font-size: 30px;
+  background-color: #f4bd93;
+  border-radius: 10px;
+  border: none;
+  color: #4484CE;
+  font-size: 30px;
+  font-weight: 400; 
+}*/
+.DivNextButton{
+  margin-top: 8%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.NextButton{
+  cursor: pointer;
+  width: 15%;
+  height: 50px;
+  font-size: 30px;
+  background-color: #F19F4D;
+  border-radius: 10px;
+  border:none;
+  color: white;
+  font-family: 'Sigmar One', Microsoft JhengHei, cursive;
+}
+.option{
+  margin-top: 5%;
+}
+.TitleImage{
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+}
+.background{
+/*   border: solid 5px blue; */
+  width: 100%;
+  height: 100%;
+/*   display: block; */
+/*   top: 0;
+  left: 0; */
+}
+.ColorBlocks{
+  /*移至底層*/
+  z-index: -1;
+/*   border: solid 5px blue; */
+  position: absolute;
+/*   display: block; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ColorBlock{
+/*   display: block; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /*有點像ps的混和模式*/
+  mix-blend-mode: hard-light;
+}
+@keyframes moveX-1 {
+  from { left: 90%; transform: rotate(20deg); } to { left: 50%; transform: rotate(600deg); }
+}
+@keyframes moveY-1 {
+  from { top: 90%; } to { top: -10%; }
+}
+@keyframes moveX-2 {
+  from { left: 0%; } to { left: 90%; }
+}
+@keyframes moveY-2 {
+  from { top: 20%; } to { top: -10%; }
+}
+@keyframes moveX-3 {
+  from { left: 80%; } to { left: 90%; }
+}
+@keyframes moveY-3 {
+  from { top: 0%; } to { top: 20%; }
+}
+@keyframes moveX-4 {
+  from { left: 0%; } to { left: 60%; }
+}
+@keyframes moveY-4 {
+  from { top: 0%; } to { top: 90%; }
+}
+@keyframes moveX-5 {
+  from { left: 100%;transform: rotate(-40deg); } to { left: 30%;transform: rotate(-20deg); }
+}
+@keyframes moveY-5 {
+  from { top: 50%; } to { top: 30%; }
+}@keyframes moveX-6 {
+  from { left: 0%;transform: rotate(-30deg); } to { left: 20%;transform: rotate(-100deg); }
+}
+@keyframes moveY-6 {
+  from { top: 0%; } to { top: 100%; }
+}
+@keyframes moveX-7 {
+  from { left: 0%; } to { left: 70%; }
+}
+@keyframes moveY-7 {
+  from { top: 0%; } to { top: 20%; }
+}
+@keyframes moveX-8 {
+  from { left: 70%; } to { left: 20%; }
+}
+@keyframes moveY-8 {
+  from { top: 80%; } to { top: -20%; }
+}
+@keyframes moveX-9 {
+  from { left: 0%; } to { left: 70%; }
+}
+@keyframes moveY-9 {
+  from { top: 80%; } to { top: 0%; }
+}
+@keyframes moveX-10 {
+  from { left: 30%; } to { left: 0%; }
+}
+@keyframes moveY-10 {
+  from { top: 0%;transform: rotate(200deg); } to { top: 100%;transform: rotate(250deg); }
+}
+@keyframes moveX-11 {
+  from { left: 0%; } to { left: 100%; }
+}
+@keyframes moveY-11 {
+  from { top: 80%;transform: rotate(200deg); } to { top: 0%;transform: rotate(250deg); }
+}
+.move-1 {
+  width: 100px;
+  height: auto;
+  transform: rotate(50deg);
+  animation: moveX-1 14s linear 0s infinite alternate, 
+              moveY-1 15s linear 0s infinite alternate-reverse;
+}
+.move-2{
+  width: 500px;
+  height: auto;
+  transform: rotate(50deg);
+  animation: moveX-2 34s linear 0s infinite alternate, 
+              moveY-2 15s linear 0s infinite alternate-reverse;
+}
+.move-3{
+  width: 300px;
+  height: auto;
+  transform: rotate(20deg);
+  animation: moveX-3 30s linear 0s infinite alternate, 
+              moveY-3 13s linear 0s infinite alternate-reverse;
+}
+.move-4{
+  width: 100px;
+  height: auto;
+  transform: rotate(-30deg);
+  animation: moveX-4 34s linear 0s infinite alternate, 
+              moveY-4 15s linear 0s infinite alternate-reverse;
+}
+.move-5{
+  width: 80px;
+  height: auto;
+  transform: rotate(-40deg);
+  animation: moveX-5 20s linear 0s infinite alternate, 
+              moveY-5 10s linear 0s infinite alternate-reverse;
+}
+.move-6{
+  width: 100px;
+  height: auto;
+  transform: rotate(-30deg);
+  animation: moveX-6 34s linear 0s infinite alternate, 
+              moveY-6 15s linear 0s infinite alternate-reverse;
+}
+.move-7{
+  width: 300px;
+  height: auto;
+  transform: rotate(110deg);
+  animation: moveX-7 34s linear 0s infinite alternate, 
+              moveY-7 15s linear 0s infinite alternate-reverse;
+}
+.move-8{
+  width: 600px;
+  height: auto;
+  transform: rotate(-50deg);
+  animation: moveX-8 34s linear 0s infinite alternate, 
+              moveY-8 15s linear 0s infinite alternate-reverse;
+}
+.move-9{
+  width: 300px;
+  height: auto;
+  transform: rotate(110deg);
+  animation: moveX-9 34s linear 0s infinite alternate, 
+              moveY-9 15s linear 0s infinite alternate-reverse;
+}
+.move-10{
+  width: 500px;
+  height: auto;
+  transform: rotate(200deg);
+  animation: moveX-10 34s linear 0s infinite alternate, 
+              moveY-10 15s linear 0s infinite alternate-reverse;
+}
+.move-11{
+  width: 70px;
+  height: auto;
+  transform: rotate(200deg);
+  animation: moveX-11 34s linear 0s infinite alternate, 
+              moveY-11 15s linear 0s infinite alternate-reverse;
+}
 
-    /*單選按鈕*/
-    #radio input[type="radio"] {
-      display: none; 
-      text-align: center;
-    }
-    #radio input:checked + .OptionButton {
-    /*   background-color: #F19F4D; */
-      border: solid 5px white;
-      color: #fff;
-      font-weight: 200;
-      cursor: default; 
-    }
-    #radio .OptionButton {
-    /*   display: inline-block; margin: 0 5px 10px 0; padding: 5px 10px; background: #f7f7f7; color: #333; cursor: pointer;  */
-    /*   margin: 0 5px 10px 0;  */
-      display: inline-block;
-    /*   padding: 13px;
-      padding-left: 50px;
-      padding-right: 50px; */
-    /*   padding: 5px 10px; */
-      padding-top: 10px;
-      padding-bottom: 10px;
-      cursor: pointer;
-    /*   align: center; */
-    /*   text-align: center; */
-      /*讓按鈕平行對齊*/
-      vertical-align: middle;
-      width: 50%;
-    /*   height: 80px; */
-      font-size: 30px;
-      background-color: #f4bd93;
-      border-radius: 10px;
-      border: none;
-      color: #4484CE;
-      font-size: 30px;
-      font-weight: 500;
-      border-radius: 5px; 
-    }
-    #radio .OptionButton:hover {
-      letter-spacing: 2px;
-    /*   border: solid 5px white;
-      transition: border 0.35s linear; */
-    }
-    .links{
-    /*   display: inline-block; */
-    /*   vertical-align: middle; */
-    }
-    .link{
-      color: #6b629b;
-      font-family: 'Playfair Display', serif;
-      padding: 20px;
-    }
-    .AboutUsLink{
-      position: absolute;
-      text-align: left;
-    }
-    .ReferenceLink{
-    /*   position: absolute; */
-      text-align: right;
-    }
-    .ProgressBar{
-      margin-top: 2%;
-      margin-left: 25%;
-      margin-right: 25%;
-    }
-    .w3-round-xlarge{
-      background-color: #eadad0;
-    }
-    .w3-container{
-      background-color: #fa9074;
-      color: white;
-      width: 20%;
-    }
-    .Preface{
-    /*   text-align: center; */
-      margin-top: 1%;
-    /*   margin-left: 25%; */
-    /*   margin-right: auto; */
-      font-size: 16px;
-      color: #3F3F3F;
-    }
-    .SpanPreface{
-    /*   text-align: center; */
-    }
-    .scroller {
-      height: 1.2em;
-      line-height: 1.2em;
-      position: relative;
-      overflow: hidden;
-    }
-    .scroller > span {
-      display:block;
-      position: absolute;
-      left:30%;
-      top: 0;
-      animation: slide 5s infinite;
-      font-weight: bold;
+/*單選按鈕*/
+#radio input[type="radio"] {
+  display: none; 
+  text-align: center;
+}
+#radio input:checked + .OptionButton {
+/*   background-color: #F19F4D; */
+  border: solid 5px white;
+  color: #fff;
+  font-weight: 200;
+  cursor: default; 
+}
+#radio .OptionButton {
+/*   display: inline-block; margin: 0 5px 10px 0; padding: 5px 10px; background: #f7f7f7; color: #333; cursor: pointer;  */
+/*   margin: 0 5px 10px 0;  */
+  display: inline-block;
+/*   padding: 13px;
+  padding-left: 50px;
+  padding-right: 50px; */
+/*   padding: 5px 10px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+/*   align: center; */
+/*   text-align: center; */
+  /*讓按鈕平行對齊*/
+  vertical-align: middle;
+  width: 50%;
+/*   height: 80px; */
+  font-size: 30px;
+  background-color: #f4bd93;
+  border-radius: 10px;
+  border: none;
+  color: #4484CE;
+  font-size: 30px;
+  font-weight: 500;
+  border-radius: 5px; 
+}
+#radio .OptionButton:hover {
+  letter-spacing: 2px;
+/*   border: solid 5px white;
+  transition: border 0.35s linear; */
+}
+.links{
+/*   display: inline-block; */
+/*   vertical-align: middle; */
+}
+.link{
+  color: #6b629b;
+  font-family: 'Playfair Display', serif;
+  padding: 20px;
+}
+.AboutUsLink{
+  position: absolute;
+  text-align: left;
+}
+.ReferenceLink{
+/*   position: absolute; */
+  text-align: right;
+}
+.ProgressBar{
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.w3-round-xlarge{
+  background-color: #eadad0;
+}
+.w3-container{
+  background-color: #fa9074;
+  color: white;
+  width: 20%;
+}
+.Preface{
+/*   text-align: center; */
+  margin-top: 1%;
+/*   margin-left: 25%; */
+/*   margin-right: auto; */
+  font-size: 16px;
+  color: #3F3F3F;
+}
+.SpanPreface{
+/*   text-align: center; */
+}
+.scroller {
+  height: 1.2em;
+  line-height: 1.2em;
+  position: relative;
+  overflow: hidden;
+}
+.scroller > span {
+  display:block;
+  position: absolute;
+  left:30%;
+  top: 0;
+  animation: slide 5s infinite;
+  font-weight: bold;
 
-    }
-    .scroller > span:hover{
-      animation-play-state: paused;
-    }
-    @keyframes slide {
-      0% {
-        top: 0;
-      }
-      50% {
-        top: -1.2em;
-      }
-      99% {
-        top: -2.4em;
-      }
-      100%{
-        top: 0;
-      }
-    }
+}
+.scroller > span:hover{
+  animation-play-state: paused;
+}
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -1.2em;
+  }
+  99% {
+    top: -2.4em;
+  }
+  100%{
+    top: 0;
+  }
+}
 
    </style>
  </head>
